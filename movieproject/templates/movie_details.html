@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" style="float: right;
+ margin: 0 0 0 15px;">
+    <style>.section {
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+  font-family: sans-serif;
+}
+
+.paragraph {
+  color: #555;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  color: #222;
+  line-height: 24px;
+}</style>
+  <h2> Movie Details </h2>
+<!--<img src="{{ products.image.url }}" style = "height: 40%; width: 20%;">-->
+<!--  <ul class="list-group">-->
+
+
+<!--      <li style="float: right; padding: 15px; ">{{ products.name }}</li>-->
+<!--     <li style="float: right; ">  {{ products.desc }}</li>-->
+<!--      <li style="float: right; margin: -72px 438px 0 15px;">  {{ products.year }}</li>-->
+<!-- <a href="{% url 'demo:update' products.id %}" class="btn btn-warning"style = "height: 20%; width: 10%;">Update</a>-->
+<!--  </ul>-->
+<section class="section">
+  <img src="{{ products.image.url }}" class="image" />
+  <div class="content">
+
+    <h2 class="title">
+      {{ products.name }}
+    </h2>
+    <p class="paragraph">
+
+     {{ products.desc }}
+    </p>
+     <p class="paragraph">
+      {{ products.year }}
+    </p>
+      <a href="{% url 'demo:update' products.id %}" class="btn btn-warning"style = "height: 15%; width: 10%;">Update</a>
+      <a href="{% url 'demo:delete' products.id %}" class="btn btn-warning"style = "height: 15%; width: 10%;">Delete</a>
+  </div>
+</section>
+</div>
+
+{% endblock %}
